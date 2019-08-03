@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="NTT,动态规划,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="集训时出的水题（每月一题越来越水）。">
+<meta name="keywords" content="NTT,动态规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每月一题2019.7">
+<meta property="og:url" content="http://yoursite.com/每月一题2019.7/index.html">
+<meta property="og:site_name" content="Fuyuki&#39;s Blog">
+<meta property="og:description" content="集训时出的水题（每月一题越来越水）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-03T12:36:10.153Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每月一题2019.7">
+<meta name="twitter:description" content="集训时出的水题（每月一题越来越水）。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/每月一题2019.7/">
+
+
+
+
+
+  <title>每月一题2019.7 | Fuyuki's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fuyuki's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/每月一题2019.7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fuyuki">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fuyuki's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">每月一题2019.7</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-01T00:00:00+08:00">
+                2019-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/每月一题/" itemprop="url" rel="index">
+                    <span itemprop="name">每月一题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>集训时出的水题（每月一题越来越水）。</p>
+<a id="more"></a>
+<p><a href="https://www.luogu.org/problemnew/show/U69336" target="_blank" rel="noopener">题面</a></p>
+<p>假设这个二叉搜索树内的节点权值为$[1,n]$。</p>
+<p>那么我们可以发现一个有趣的性质就是该二叉搜索树中的每个子树内的值域都是连续的。</p>
+<p>所以可以设计出状态$f_{i,j,k,p}$表示值域$[i,j]$构成的红黑树的黑高度为k,根为红或黑色的情况下红黑树的种数。</p>
+<p>每次枚举当前的红黑树的根的权值以及颜色，可以写出一个$O(n^4)$的dp:</p>
+<p>设$f_{i,j,k,2}=f_{i,j,k,0}+f_{i,j,k,1}$</p>
+<script type="math/tex; mode=display">f_{i,j,k,0}=\sum_{p=i}^{j}f_{i,p-1,k-1,2}*f_{p+1,j,k-1,2}</script><script type="math/tex; mode=display">f_{i,j,k,1}=\sum_{p=i}^{j}f_{i,p-1,k,0}*f_{p+1,j,k,0}</script><p>又观察到实际上没有必要枚举值域的范围，只需要知道红黑树的大小就可以进行上面的dp，那么可以省去一维状态。</p>
+<p>又因n个节点的红黑树树高为$[\lfloor \frac{log_2 n}{2}+1\rfloor,\lfloor log_2 (n+1) \rfloor ]$，第二维的状态总数实际上只有$O(logn)$种。</p>
+<p>那么我们就得到了一个$O(n^2logn)$的算法。</p>
+<p>进一步观察得到的两个dp方程,还是设$f_{i,j,2}=f_{i,j,0}+f_{i,j,1}$。</p>
+<script type="math/tex; mode=display">f_{i,j,0}=\sum_{k=1}^{i}f_{k-1,j-1,2}*f_{i-k,j-1,2}</script><script type="math/tex; mode=display">f_{i,j,1}=\sum_{k=1}^{i}f_{k-1,j,0}*f_{i-k,j,0}</script><p>这是一个卷积的形式，那么对于答案的第二维做一遍卷积dp就可以得到答案了。<br>复杂度$O(nlog^2 n)$，可以通过。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rnt re int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> I inline int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> V inline void</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,A,B) for(rnt i(A),_ed(B);i&lt;=_ed;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ROF(i,A,B) for(rnt i(A),_ed(B);i&gt;=_ed;i--)</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1</span>&lt;&lt;<span class="number">19</span>|<span class="number">1</span>,mod=<span class="number">998244353</span>,G=<span class="number">3</span>,inv3=<span class="number">332748118</span>,inv2=<span class="number">499122177</span>;</span><br><span class="line"><span class="function">I <span class="title">Pow</span><span class="params">(re ll t,rnt x)</span></span>&#123;</span><br><span class="line">    re ll s=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(x)&#123;</span><br><span class="line">        <span class="keyword">if</span>(x&amp;<span class="number">1</span>)s=s*t%mod;</span><br><span class="line">        x&gt;&gt;=<span class="number">1</span>,t=t*t%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> poly&#123;</span><br><span class="line">    int lmt(1),r[N],w[N];</span><br><span class="line">    <span class="function">V <span class="title">init</span><span class="params">(rnt n)</span></span>&#123;</span><br><span class="line">        rnt l=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(lmt&lt;=n)lmt&lt;&lt;=<span class="number">1</span>,++l;</span><br><span class="line">        FOR(i,<span class="number">1</span>,lmt<span class="number">-1</span>)r[i]=(r[i&gt;&gt;<span class="number">1</span>]&gt;&gt;<span class="number">1</span>)|((i&amp;<span class="number">1</span>)&lt;&lt;(l<span class="number">-1</span>));</span><br><span class="line">        rnt wn=Pow(<span class="number">3</span>,mod&gt;&gt;l);w[lmt&gt;&gt;<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        FOR(i,(lmt&gt;&gt;<span class="number">1</span>)+<span class="number">1</span>,lmt<span class="number">-1</span>)w[i]=(ll)w[i<span class="number">-1</span>]*wn%mod;</span><br><span class="line">        ROF(i,(lmt&gt;&gt;<span class="number">1</span>)<span class="number">-1</span>,<span class="number">1</span>)w[i]=w[i&lt;&lt;<span class="number">1</span>];</span><br><span class="line">        lmt=__builtin_ctz(lmt);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">I <span class="title">getLen</span><span class="params">(rnt n)</span></span>&#123;<span class="keyword">return</span> <span class="number">1</span>&lt;&lt;(<span class="number">32</span>-__builtin_clz(n));&#125;</span><br><span class="line">    <span class="function">V <span class="title">DFT</span><span class="params">(<span class="keyword">int</span>*a,rnt l)</span></span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> tmp[N];</span><br><span class="line">        rnt u(lmt-__builtin_ctz(l)),t;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)tmp[i]=a[r[i]&gt;&gt;u];</span><br><span class="line">        <span class="keyword">for</span>(rnt i=<span class="number">1</span>;i&lt;l;i&lt;&lt;=<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">for</span>(rnt j=<span class="number">0</span>,step=i&lt;&lt;<span class="number">1</span>;j&lt;l;j+=step)</span><br><span class="line">                FOR(k,<span class="number">0</span>,i<span class="number">-1</span>)&#123;</span><br><span class="line">                    t=tmp[i+j+k]*w[i+k]%mod;</span><br><span class="line">                    tmp[i+j+k]=tmp[j+k]+mod-t;</span><br><span class="line">                    tmp[j+k]+=t;</span><br><span class="line">                	</span><br><span class="line">                &#125;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)a[i]=tmp[i]%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">V <span class="title">IDFT</span><span class="params">(<span class="keyword">int</span>*a,rnt l)</span> </span>&#123;</span><br><span class="line">        reverse(a+<span class="number">1</span>,a+l),DFT(a,l);</span><br><span class="line">        <span class="function">rnt <span class="title">bk</span><span class="params">(mod-mod/l)</span></span>;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)a[i]=(ll)a[i]*bk%mod;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n,m,ans;</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">2</span>][<span class="number">20</span>][N],tmp[N];</span><br><span class="line"><span class="function">V <span class="title">input</span><span class="params">()</span></span>&#123;<span class="built_in">cin</span>&gt;&gt;n,m=<span class="number">31</span>-__builtin_clz(n+<span class="number">1</span>);&#125;</span><br><span class="line"><span class="function">V <span class="title">init</span><span class="params">()</span></span>&#123;poly::init(n+n+<span class="number">3</span>);&#125;</span><br><span class="line"><span class="function">V <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l=poly::getLen(n+n+<span class="number">3</span>);</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]=f[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    FOR(j,<span class="number">1</span>,m)&#123;</span><br><span class="line">        FOR(i,<span class="number">0</span>,n)tmp[i]=(f[<span class="number">0</span>][j<span class="number">-1</span>][i]+f[<span class="number">1</span>][j<span class="number">-1</span>][i])%mod;</span><br><span class="line">        poly::DFT(tmp,l);</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)tmp[i]=<span class="number">1l</span>l*tmp[i]*tmp[i]%mod;</span><br><span class="line">        poly::IDFT(tmp,l);</span><br><span class="line">        FOR(i,<span class="number">1</span>,n)f[<span class="number">0</span>][j][i]+=tmp[i<span class="number">-1</span>];</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)tmp[i]=<span class="number">0</span>;</span><br><span class="line">        FOR(i,<span class="number">0</span>,n)tmp[i]=f[<span class="number">0</span>][j][i]%mod; </span><br><span class="line">        poly::DFT(tmp,l);</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)tmp[i]=<span class="number">1l</span>l*tmp[i]*tmp[i]%mod;</span><br><span class="line">        poly::IDFT(tmp,l);</span><br><span class="line">        FOR(i,<span class="number">1</span>,n)f[<span class="number">1</span>][j][i]+=tmp[i<span class="number">-1</span>];</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)tmp[i]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    FOR(i,<span class="number">0</span>,m)ans=(ans+f[<span class="number">0</span>][i][n])%mod;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    input();</span><br><span class="line">    init();</span><br><span class="line">    work();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NTT/" rel="tag"># NTT</a>
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/每月一题2019.6/" rel="next" title="每月一题2019.6">
+                <i class="fa fa-chevron-left"></i> 每月一题2019.6
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/每月一题2019.8/" rel="prev" title="每月一题2019.8">
+                每月一题2019.8 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="Fuyuki">
+            
+              <p class="site-author-name" itemprop="name">Fuyuki</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fuyuki</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="cdq分治,NTT,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="题面： 输出n个点的形态不同的森林对998244353取模的结果。">
+<meta name="keywords" content="cdq分治,NTT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每月一题2019.6">
+<meta property="og:url" content="http://yoursite.com/每月一题2019.6/index.html">
+<meta property="og:site_name" content="Fuyuki&#39;s Blog">
+<meta property="og:description" content="题面： 输出n个点的形态不同的森林对998244353取模的结果。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-03T12:34:05.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每月一题2019.6">
+<meta name="twitter:description" content="题面： 输出n个点的形态不同的森林对998244353取模的结果。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/每月一题2019.6/">
+
+
+
+
+
+  <title>每月一题2019.6 | Fuyuki's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fuyuki's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/每月一题2019.6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fuyuki">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fuyuki's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">每月一题2019.6</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-01T00:00:00+08:00">
+                2019-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/每月一题/" itemprop="url" rel="index">
+                    <span itemprop="name">每月一题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>题面：</p>
+<p>输出n个点的形态不同的森林对998244353取模的结果。</p>
+<a id="more"></a>
+<p>题解：</p>
+<p>这是经典题诶，主要考察会不会真正的分治FFT啦。</p>
+<p>设n个点的无标号有根树有$f_n$个，对应的生成函数为$F(x)$。</p>
+<p>对于一棵树而言，去掉根节点之后的各个部分互不关联，又因为没有标号，所以可以看作是一个背包的关系。那么枚举与根相连的子树大小，将背包的生成函数套进去：</p>
+<script type="math/tex; mode=display">f_n=[x^n]x\prod_{k=1}^{\infty}(\sum_{i=0}^{\infty}x^{ik})^{f_k}</script><p>这个式子就相当于枚举大小为$k$的子树，因为大小为$k$的子树有$f_k$种选法，每一种有都有无限多个，所以总贡献是右边那一堆东西。而这个总贡献有没有计算根的大小，那么就再在左边乘上一个$x$。</p>
+<p>熟悉生成函数的话，就可以话建议下右边的部分：</p>
+<script type="math/tex; mode=display">F(x)=[x^n]x\prod_{k=1}^{\infty}(1-x^k)^{-f_k}</script><p>这个时候$[x^n]$就可以拿掉了：</p>
+<script type="math/tex; mode=display">F(x)=x\prod_{k=1}^{\infty}(1-x^k)^{-f_k}</script><p>连乘转连加的话就是$\ln$了吧，那么就对数：</p>
+<script type="math/tex; mode=display">\ln{F(x)}=\ln{x}-\sum_{k=1}^{\infty}\ln(1-x^k)</script><p>对数不好处理，求导：</p>
+<script type="math/tex; mode=display">\frac{F(x)'}{F(x)}=\frac{1}{x}+\sum_{k=1}^{\infty}kf_k\frac{x^{k-1}}{1-x^k}</script><p>两边同时乘上$xF(x)$，去掉分母：</p>
+<script type="math/tex; mode=display">xF(x)'=F(x)+F(x)\sum_{k=1}^{\infty}kf_k\frac{x^k}{1-x^k}</script><p>放$[x^n]$上去：</p>
+<script type="math/tex; mode=display">nf_n=f_n+\sum_{i=1}^{n-1}f_i\sum_{k=1}^{n-1}kf_k([x^{n-i}]\frac{x^k}{1-x^k})</script><p>因为有：</p>
+<script type="math/tex; mode=display">\frac{x^k}{1-x^k}=\sum_{i=1}^{\infty}x^{ik}=\sum_{i=1}^{\infty}[k|i]x^i</script><p>所以可以带入原式：</p>
+<script type="math/tex; mode=display">nf_n=f_n+\sum_{i=1}^{n-1}f_i\sum_{k=1}^{n-1}kf_k[k|n-i]</script><p>转化一下：</p>
+<script type="math/tex; mode=display">f_n=\frac{\sum_{i=1}^{n-1}f_i\sum_{k=1}^{n-1}kf_k[k|n-i]}{n-1}</script><p>将右边的部分当做另一个多项式的$n-i$项，那么这就是一个类似卷积的形式，考虑用分治$FFT$优化。</p>
+<p>基于调和级数，已知$F(x)$的话暴力计算右边的辅助多项式(设为$G(x)$)的复杂度只有$O(nlogn)$，那么就只用考虑如何计算分治时左边对右边的贡献。</p>
+<p>因为$G(x)$的位数不够，当分治的左端点不为$1$时左区间对右边的贡献不能完全计算。所以就先不计算这部分的贡献，改为在计算出一段$G(x)$后卷积两次来完整计算左区间的贡献（一遍$F(x)$一遍$G(x)$）。</p>
+<p>具体实现的时候为了计算贡献时的方便就将位数补到$2^k$不然非常难写。</p>
+<p>现在已经求出了$n$个点的无标号有根树的数量，考虑使用容斥转化出为标号无根树的数量。</p>
+<p>因为一棵树的重心非常少并且可以用子树大小来描述，那么就使用容斥去掉所有根不为重心的子树，具体来说就是枚举有哪些树的根包含一个子树的大小大于整棵树大小的一半就可以解决了。</p>
+<p>实际实现的时候考虑枚举断掉原来树的一条中心边来处理，下面假设$h_n$为$n$的无标号无根树的数量。</p>
+<script type="math/tex; mode=display">h_n=\begin{cases}f_n-\sum_{k=(n+1)/2}^{n-1}f_kf_{n-k},[2\nmid n]\\f_n-\sum_{k=n/2+1}^{n-1}f_kf_{n-k}-\binom{f_{n/2}}{2},[2\mid n]\end{cases}</script><p>因为偶数个节点的树可能有两个重心，枚举判掉即可。</p>
+<p>那么这个东西的中间的部分很明显是一个卷积，$O(nlogn)$求出来然后$O(n)$加加减减就可以求出$\{h_n\}$。</p>
+<p>然后现在知道了无标号的树的数量，怎么计算无标号森林的数量呢？</p>
+<p>一颗森林由若干棵树组成，互相之间没有影响，也没有顺序，那么就相当于一个背包:大小为$k$的物品有$h_k$种。</p>
+<p>设恰好装成体积为$n$的方案数为$g_n$，其数列对应的形式幂级数为$G(x)$：</p>
+<script type="math/tex; mode=display">G(x)=\prod_{k=1}^{\infty}(\sum_{i=0}^{\infty}x^{ik})^{h_k}</script><p>非常眼熟对吧，那么就求$\ln$：</p>
+<script type="math/tex; mode=display">\ln{G(x)}=\sum_{k=1}^{\infty}h_k\ln(\frac{1}{1-x^k})</script><p>而又因为：</p>
+<script type="math/tex; mode=display">\ln(\frac{1}{1-x^k})=\int dx\frac{(\frac{1}{1-x^k})'}{\frac{1}{1-x^k}}</script><script type="math/tex; mode=display">\qquad\qquad=\int dx(1-x^k)\sum_{i=1}^{\infty}ikx^{ik-1}</script><script type="math/tex; mode=display">\qquad\qquad=\int dx\sum_{i=1}^{\infty}kx^{ik-1}</script><script type="math/tex; mode=display">\qquad\qquad=\sum_{i=1}^{\infty}\frac{1}{i}x^{ki}</script><p>基于调和级数，这个东西是可以$O(nlogn)$暴力计算出来的，那么就可以求出$\ln{G(x)}$，再做一个$\exp$就可以求出$G(x)$了。</p>
+<p>总复杂度$O(nlog^2n)$，但是因为分治FFT的小常数跑起来相当快。</p>
+<p>下面是代码环节：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1</span>&lt;&lt;<span class="number">19</span>|<span class="number">1</span>,mod=<span class="number">998244353</span>,G=<span class="number">3</span>,inv3=<span class="number">332748118</span>,inv2=mod+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> I inline int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> V inline void</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,A,B) for(re int i=A;i&lt;=B;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ROF(i,A,B) for(re int i=A;i&gt;=B;--i)</span></span><br><span class="line"><span class="function">ll <span class="title">Pow</span><span class="params">(ll t,<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    ll s=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;x;x&gt;&gt;=<span class="number">1</span>,t=t*t%mod)</span><br><span class="line">        <span class="keyword">if</span>(x&amp;<span class="number">1</span>)s=s*t%mod;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> poly&#123;</span><br><span class="line">    int lmt(1),r[N],w[N],inv[N];</span><br><span class="line">    <span class="function">V <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">0</span>;inv[<span class="number">0</span>]=inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        FOR(i,<span class="number">2</span>,n)inv[i]=<span class="number">1l</span>l*inv[mod%i]*(mod-mod/i)%mod;</span><br><span class="line">        <span class="keyword">while</span>(lmt&lt;=n)lmt&lt;&lt;=<span class="number">1</span>,++l;</span><br><span class="line">        FOR(i,<span class="number">1</span>,lmt<span class="number">-1</span>)r[i]=(r[i&gt;&gt;<span class="number">1</span>]&gt;&gt;<span class="number">1</span>)|((i&amp;<span class="number">1</span>)&lt;&lt;(l<span class="number">-1</span>));</span><br><span class="line">        <span class="keyword">int</span> wn=Pow(<span class="number">3</span>,(mod<span class="number">-1</span>)&gt;&gt;l);w[lmt&gt;&gt;<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        FOR(i,(lmt&gt;&gt;<span class="number">1</span>)+<span class="number">1</span>,lmt<span class="number">-1</span>)w[i]=(ll)w[i<span class="number">-1</span>]*wn%mod;</span><br><span class="line">        ROF(i,(lmt&gt;&gt;<span class="number">1</span>)<span class="number">-1</span>,<span class="number">1</span>)w[i]=w[i&lt;&lt;<span class="number">1</span>];</span><br><span class="line">        lmt=__builtin_ctz(lmt);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">I <span class="title">getLen</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;<span class="keyword">return</span> <span class="number">1</span>&lt;&lt;(<span class="number">32</span>-__builtin_clz(n));&#125;</span><br><span class="line">    <span class="function">V <span class="title">DFT</span><span class="params">(<span class="keyword">int</span>*a,<span class="keyword">int</span> l)</span></span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> tmp[N];</span><br><span class="line">        re int u(lmt-__builtin_ctz(l)),t;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)tmp[i]=a[r[i]&gt;&gt;u];</span><br><span class="line">        <span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;l;i&lt;&lt;=<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">0</span>,step=i&lt;&lt;<span class="number">1</span>;j&lt;l;j+=step)</span><br><span class="line">                FOR(k,<span class="number">0</span>,i<span class="number">-1</span>)</span><br><span class="line">                    t=tmp[i+j+k]*w[i+k]%mod,tmp[i+j+k]=tmp[j+k]+mod-t,tmp[j+k]+=t;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)a[i]=tmp[i]%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">V <span class="title">IDFT</span><span class="params">(<span class="keyword">int</span>*a,<span class="keyword">int</span> l)</span></span>&#123;</span><br><span class="line">        reverse(a+<span class="number">1</span>,a+l),DFT(a,l);</span><br><span class="line">        <span class="function">re <span class="keyword">int</span> <span class="title">bk</span><span class="params">(mod-(mod<span class="number">-1</span>)/l)</span></span>;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)a[i]=(ll)a[i]*bk%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">V <span class="title">get_inv</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>*a,<span class="keyword">int</span>*b,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>)<span class="keyword">return</span> <span class="keyword">void</span>(b[<span class="number">0</span>]=Pow(a[<span class="number">0</span>],mod<span class="number">-2</span>));</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> tmp[N],l;</span><br><span class="line">        get_inv(a,b,(n+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>),l=getLen(n&lt;&lt;<span class="number">1</span>);</span><br><span class="line">        FOR(i,<span class="number">0</span>,n<span class="number">-1</span>)tmp[i]=a[i];</span><br><span class="line">        FOR(i,n,l<span class="number">-1</span>)tmp[i]=<span class="number">0</span>;</span><br><span class="line">        DFT(tmp,l),DFT(b,l);</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)b[i]=(<span class="number">2l</span>l<span class="number">-1l</span>l*tmp[i]*b[i]%mod+mod)%mod*b[i]%mod;</span><br><span class="line">        IDFT(b,l);FOR(i,n,l<span class="number">-1</span>)b[i]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">V <span class="title">deri</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>*a,<span class="keyword">int</span>*b,<span class="keyword">int</span> n)</span></span>&#123;FOR(i,<span class="number">0</span>,n<span class="number">-2</span>)b[i]=<span class="number">1l</span>l*a[i+<span class="number">1</span>]*(i+<span class="number">1</span>)%mod;&#125;</span><br><span class="line">    <span class="function">V <span class="title">inte</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>*a,<span class="keyword">int</span>*b,<span class="keyword">int</span> n)</span></span>&#123;FOR(i,<span class="number">1</span>,n<span class="number">-1</span>)b[i]=<span class="number">1l</span>l*a[i<span class="number">-1</span>]*inv[i]%mod;&#125;</span><br><span class="line">    <span class="function">V <span class="title">Ln</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>*a,<span class="keyword">int</span>*b,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> tmp[N],l;</span><br><span class="line">        deri(a,b,n),get_inv(a,tmp,n),l=getLen(n&lt;&lt;<span class="number">1</span>);</span><br><span class="line">        DFT(b,l),DFT(tmp,l);</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)tmp[i]=<span class="number">1l</span>l*b[i]*tmp[i]%mod;</span><br><span class="line">        IDFT(tmp,l);FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)b[i]=<span class="number">0</span>;</span><br><span class="line">        inte(tmp,b,n);FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)tmp[i]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">V <span class="title">exp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>*a,<span class="keyword">int</span>*b,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> tmp[N],l;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>)<span class="keyword">return</span> <span class="keyword">void</span>(b[<span class="number">0</span>]=<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">exp</span>(a,b,(n+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>),Ln(b,tmp,n),l=getLen(n&lt;&lt;<span class="number">1</span>);</span><br><span class="line">        FOR(i,<span class="number">0</span>,n<span class="number">-1</span>)tmp[i]=(a[i]-tmp[i]+mod)%mod;</span><br><span class="line">        FOR(i,n,l<span class="number">-1</span>)tmp[i]=<span class="number">0</span>;</span><br><span class="line">        ++tmp[<span class="number">0</span>],DFT(tmp,l),DFT(b,l);</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)b[i]=<span class="number">1l</span>l*tmp[i]*b[i]%mod;</span><br><span class="line">        IDFT(b,l);FOR(i,n,l<span class="number">-1</span>)b[i]=tmp[i]=tmp[i-n]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> poly::inv;</span><br><span class="line"><span class="keyword">using</span> poly::DFT;</span><br><span class="line"><span class="keyword">using</span> poly::IDFT;</span><br><span class="line"><span class="keyword">using</span> poly::getLen;</span><br><span class="line"><span class="keyword">int</span> f[N],g[N],n,m,k,h[N];</span><br><span class="line"><span class="function">V <span class="title">init</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x^<span class="number">1</span>)f[x]=<span class="number">1l</span>l*f[x]*Pow(x<span class="number">-1</span>,mod<span class="number">-2</span>)%mod;</span><br><span class="line">    <span class="keyword">else</span> f[x]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(re <span class="keyword">int</span> j=x,t=<span class="number">1l</span>l*f[x]*x%mod;j&lt;=n;j+=x)g[j]=(g[j]+t)%mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mul() DFT(X,l),DFT(Y,l);FOR(i,0,l-1)X[i]=1ll*X[i]*Y[i]%mod;IDFT(X,l);</span></span><br><span class="line"><span class="function">V <span class="title">cdq</span><span class="params">(<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L==R)<span class="keyword">return</span> init(L);</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> X[N],Y[N];</span><br><span class="line">    re <span class="keyword">int</span> mid=L+R&gt;&gt;<span class="number">1</span>,l;</span><br><span class="line">    cdq(L,mid);</span><br><span class="line">    <span class="keyword">if</span>(L==<span class="number">1</span>)&#123;</span><br><span class="line">        FOR(i,L,mid)X[i-L]=f[i],Y[i-L]=g[i];</span><br><span class="line">        l=getLen(R-L),mul();</span><br><span class="line">        FOR(i,mid+<span class="number">1</span>,R)f[i]=(f[i]+X[i-L<span class="number">-1</span>])%mod;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)X[i]=Y[i]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        l=getLen(R+mid-L-L+<span class="number">1</span>);</span><br><span class="line">        FOR(i,L,mid)X[i-L]=f[i];</span><br><span class="line">        FOR(i,<span class="number">1</span>,R-L)Y[i<span class="number">-1</span>]=g[i];mul()</span><br><span class="line">        FOR(i,mid+<span class="number">1</span>,R)f[i]=(f[i]+X[i-L<span class="number">-1</span>])%mod;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)X[i]=Y[i]=<span class="number">0</span>;</span><br><span class="line">        FOR(i,L,mid)X[i-L]=g[i];</span><br><span class="line">        FOR(i,<span class="number">1</span>,R-L)Y[i<span class="number">-1</span>]=f[i];mul()</span><br><span class="line">        FOR(i,mid+<span class="number">1</span>,R)f[i]=(f[i]+X[i-L<span class="number">-1</span>])%mod;</span><br><span class="line">        FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)X[i]=Y[i]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cdq(mid+<span class="number">1</span>,R);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> A[N],B[N],fac[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    freopen(<span class="string">"tree.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"tree.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n,n++,m=n,n=getLen(n),poly::init(n),cdq(<span class="number">1</span>,n),n=m;</span><br><span class="line">    re <span class="keyword">int</span> l=getLen(n+n);</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> X[N];</span><br><span class="line">    FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)X[i]=f[i]*(i&lt;=n);DFT(X,l);</span><br><span class="line">    FOR(i,<span class="number">0</span>,l<span class="number">-1</span>)X[i]=<span class="number">1l</span>l*X[i]*X[i]%mod;IDFT(X,l);</span><br><span class="line">    FOR(i,<span class="number">1</span>,n)</span><br><span class="line">        <span class="keyword">if</span>(i&amp;<span class="number">1</span>)h[i]=(f[i]+mod<span class="number">-1l</span>l*X[i]*inv2%mod)%mod;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            X[i]=(X[i]<span class="number">-1l</span>l*f[i&gt;&gt;<span class="number">1</span>]*f[i&gt;&gt;<span class="number">1</span>]%mod+mod)%mod,</span><br><span class="line">            h[i]=((ll)f[i]+mod*<span class="number">2</span><span class="number">-1l</span>l*X[i]*inv2%mod-(<span class="number">1l</span>l*f[i&gt;&gt;<span class="number">1</span>]*(f[i&gt;&gt;<span class="number">1</span>]<span class="number">-1</span>)&gt;&gt;<span class="number">1</span>)%mod)%mod;</span><br><span class="line">    FOR(i,<span class="number">1</span>,n)FOR(j,<span class="number">1</span>,n/i)</span><br><span class="line">        A[j*i]=(A[j*i]+<span class="number">1l</span>l*h[i]*inv[j]%mod)%mod;</span><br><span class="line">    poly::<span class="built_in">exp</span>(A,B,n),n--,<span class="built_in">cout</span>&lt;&lt;B[n];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上也不是很难对吧，在校内考试的时候出了这道题结果居然全员爆0了，出来个把人输出了样例之外大部分人甚至连源代码都没交233。</p>
+<p>（明明$O(n^2)$很好想的$da\star{ze}$）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/cdq分治/" rel="tag"># cdq分治</a>
+          
+            <a href="/tags/NTT/" rel="tag"># NTT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/组合数学学习笔记/" rel="next" title="组合数学学习笔记">
+                <i class="fa fa-chevron-left"></i> 组合数学学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/每月一题2019.7/" rel="prev" title="每月一题2019.7">
+                每月一题2019.7 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="Fuyuki">
+            
+              <p class="site-author-name" itemprop="name">Fuyuki</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fuyuki</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

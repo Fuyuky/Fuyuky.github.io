@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="组合数学,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今天（2019.5.23）有幸能听到组合十段的陈通学长讲解组合数学知识。">
+<meta name="keywords" content="组合数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组合数学学习笔记">
+<meta property="og:url" content="http://yoursite.com/组合数学学习笔记/index.html">
+<meta property="og:site_name" content="Fuyuki&#39;s Blog">
+<meta property="og:description" content="今天（2019.5.23）有幸能听到组合十段的陈通学长讲解组合数学知识。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-03T12:47:50.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="组合数学学习笔记">
+<meta name="twitter:description" content="今天（2019.5.23）有幸能听到组合十段的陈通学长讲解组合数学知识。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/组合数学学习笔记/">
+
+
+
+
+
+  <title>组合数学学习笔记 | Fuyuki's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fuyuki's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/组合数学学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fuyuki">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fuyuki's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">组合数学学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T20:25:49+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天（2019.5.23）有幸能听到组合十段的陈通学长讲解组合数学知识。</p>
+<a id="more"></a>
+<script type="math/tex; mode=display">\Huge\texttt{组}_{\texttt{合}^{\texttt{数}_\texttt{学}}}</script><h2 id="part1-组合数"><a href="#part1-组合数" class="headerlink" title="part1:组合数"></a>part1:组合数</h2><p>约定:</p>
+<script type="math/tex; mode=display">x^{\underline{k}}=[x]_{k}=\prod_{i=n-k+1}^{n}i</script><script type="math/tex; mode=display">x^{\overline{k}}=[x]^{k}=\prod_{i=n}^{n+k-1}i</script><script type="math/tex; mode=display">\binom{n}{k}=\frac{[n]_{k}}{k!}</script><p>则有：</p>
+<script type="math/tex; mode=display">\binom{-1}{k}=(-1)^k</script><script type="math/tex; mode=display">\binom{-n}{k}=(-1)^k\binom{n+k-1}{k}</script><p>二项式定理：</p>
+<script type="math/tex; mode=display">(a+b)^n=\sum_{k\geq 0}\binom{n}{k}a^kb^{n-k}</script><p>则有：</p>
+<script type="math/tex; mode=display">(1+x)^k=\sum_{k\geq 0}\binom{n}{k}x^k</script><script type="math/tex; mode=display">\frac{1}{1+x}=\sum_{k\geq 0}(-x)^k</script><script type="math/tex; mode=display">\sum_{k\geq 0}\binom{n}{k}=2^n</script><script type="math/tex; mode=display">\sum_{k\geq 0}(-1)^k\binom{n}{k}=0</script><script type="math/tex; mode=display">\sum_{k\geq 0}\binom{n}{2k}=2^{n-1}</script><script type="math/tex; mode=display">\sum_{k\geq 0}\binom{n}{3k}=?</script><p>将$x=w_3^0,w_3^1,w_3^2$带入$(1+x)^k$可以计算</p>
+<p>（课后练习1:解决一类$\sum\binom{n}{ak}$的问题）</p>
+<p>fandemengde行列式：</p>
+<script type="math/tex; mode=display">(1+x)^{n_1}*(1+x)^{n_2}=\sum_{k\geq 0}\sum_{i\geq 0}\binom{n_1}{i}\binom{n_2}{k-i}x^k</script><script type="math/tex; mode=display">=(1+x)^{n_1+n_2}=\sum_{k\geq 0}\binom{n_1+n_2}{k}x^k</script><p>Lucas定理：</p>
+<script type="math/tex; mode=display">\binom{n}{m}\equiv \binom{n \mod{p}}{m\mod{p}}\cdot\binom{n/p}{m/p}\mod{p}</script><p>证明：</p>
+<script type="math/tex; mode=display">n=s*p+r</script><script type="math/tex; mode=display">(1+x)^n=[(1+x)^p]^s*(1+x)^r</script><script type="math/tex; mode=display">=(1+\binom{p}{1}x+\binom{p}{2}x^2+...+\binom{p}{p}x^p)^s*(1+x)^r</script><script type="math/tex; mode=display">\equiv(1+x^p)^s\cdot(1+x)^r\mod{p}</script><p>之后再二项式转回去就ok了。</p>
+<p>杨辉三角性质：</p>
+<script type="math/tex; mode=display">\binom{n}{m}=\binom{n-1}{m-1}+\binom{n-1}{m}</script><script type="math/tex; mode=display">\sum_{i=m}^{n}\binom{i}{k}=\binom{n+1}{m+1}-\binom{m}{k+1}</script><script type="math/tex; mode=display">\sum_{k=0}^{n}k\binom{n}{k}=\sum_{k=1}^{n}n\binom{n-1}{k-1}=n\sum_{k=0}^{n-1}\binom{n-1}{k}=n2^n</script><script type="math/tex; mode=display">\sum_{k=0}^{n}k^2\binom{n}{k}=
+\sum_{k=0}^{n}k^{\underline{2}}\binom{n}{k}+\sum_{k=0}^{n}k\binom{n}{k}=n(n-1)2^{n-1}+n2^n</script><h3 id="e-g"><a href="#e-g" class="headerlink" title="e.g."></a>e.g.</h3><p>若$f(x)$为次数小于n的多项式，则有:$\sum_{k=0}^{n}(-1)^kf(k)\binom{n}{k}=0$</p>
+<p>考虑将普通多项式转化成下降幂多项式来证明(课后练习2)。</p>
+<p>$Stirling$公式：</p>
+<script type="math/tex; mode=display">n! \approx \sqrt{2\pi n}(\frac{n}{e})^n</script><p>性质：$\binom{n}{n/2}\approx\frac{2^n}{\sqrt{n}}$</p>
+<h2 id="part2-生成函数"><a href="#part2-生成函数" class="headerlink" title="part2:生成函数"></a>part2:生成函数</h2><p>生成函数是数列的另一种表达方式（形式幂级数）</p>
+<p>{$a_n$}的普通生成函数为$\sum_{n\geq 0}a_nx_n$</p>
+<h3 id="e-g-1"><a href="#e-g-1" class="headerlink" title="e.g."></a>e.g.</h3><p>组合数对应的生成函数：$(1+x)^n=\sum_{k \geq 0}\binom{n}{k}x^k$</p>
+<p>阶乘的倒数对应的生成函数：$e^x=\sum_{k\geq 0}\frac{x^k}{k!}$</p>
+<h3 id="生成函数求解递推："><a href="#生成函数求解递推：" class="headerlink" title="生成函数求解递推："></a>生成函数求解递推：</h3><h4 id="e-g-0"><a href="#e-g-0" class="headerlink" title="e.g.0"></a>e.g.0</h4><p>求$Fibonacci$的通项公式：</p>
+<p>令$F(x)=\sum_{k\geq 0}f_kx^k$</p>
+<p>则有$F(x)=1+x+x^2F(x)+x(F(x)-1)$</p>
+<p>$F(x)=\frac{1}{1-x-x^2}=\frac{A}{1-\alpha x}+\frac{B}{1-\beta x}=…$</p>
+<p>后两项又是等比数列的生成函数，就可以得到通项公式了。</p>
+<h4 id="e-g-1"><a href="#e-g-1" class="headerlink" title="e.g.1"></a>e.g.1</h4><p>考虑每个元素为1,2的n元组，求和为3的倍数的n元组个数。</p>
+<p>设$F(X),g(x),h(x)$为模3余数为0,1,2的生成函数:</p>
+<p>$F(x)=1+xG(x)+xH(x)$</p>
+<p>$G(x)=1+xF(x)+xH(x)$</p>
+<p>$H(x)=1+xF(x)+xG(x)$</p>
+<p>得：$F(x)=\frac{1-x}{1-x-x^2}=\sum_{k\geq 0}(-1)^k\frac{2}{3}+\sum_{k\geq 0}\frac{1}{3}2^k$</p>
+<p>用生成函数求解通项公式的方法：用生成函数描述数列的递推公式，得到生成函数方程并求，然后将生成函数转回通项公式。</p>
+<h4 id="e-g-2"><a href="#e-g-2" class="headerlink" title="e.g.2"></a>e.g.2</h4><p>考虑每个元素为0,1,2的n元组，求有奇数个1，偶数个2的n元组个数。</p>
+<script type="math/tex; mode=display">f_n=\sum_{i+j+k=n}[2\nmid j][2\mid k]\binom{n}{j}\binom{n-i}{k}</script><script type="math/tex; mode=display">\frac{f_n}{n!}=\sum_{i+j+k=n}[2\nmid j][2\mid k]\frac{n!}{i!j!k!}</script><p>所以$f_n$的指数生成函数可以用三个函数的卷积来表示。</p>
+<script type="math/tex; mode=display">F(x)=e^x\cdot \frac{e^x-e^{-x}}{2}\cdot \frac{e^x+e^{-x}}{2}=\frac{e^{3x}-e^{-x}}{4}</script><p>(后面两项就是阶乘奇数项与偶数项的生成函数)</p>
+<script type="math/tex; mode=display">F(x)=\sum_{k\geq 0}\frac{3^n-(-1)^n}{4n!}x^n</script><p>所以$f_n=\frac{3^n-(-1)^n}{4}$。</p>
+<h2 id="part3-catlan数"><a href="#part3-catlan数" class="headerlink" title="part3:catlan数"></a>part3:catlan数</h2><p>定义：括号序列方案数。</p>
+<p>递推公式：</p>
+<script type="math/tex; mode=display">c_0=1,c_n=\sum_{i=0}^{n-1}c_ic_n-i-1</script><p>生成函数：</p>
+<script type="math/tex; mode=display">C(x)=\frac{1-\sqrt{1-4x}}{2x}</script><p>通项公式：</p>
+<script type="math/tex; mode=display">C(x)=\frac{(2n)!}{n!(n+1)!}</script><h2 id="part4-Stirling数"><a href="#part4-Stirling数" class="headerlink" title="part4:Stirling数"></a>part4:Stirling数</h2><p>这部分参见<a href="https://www.luogu.org/blog/otaku-from-hsy/si-te-lin-fan-yan-xue-xi-bi-ji" target="_blank" rel="noopener">这一篇</a></p>
+<h2 id="part5-拆分数"><a href="#part5-拆分数" class="headerlink" title="part5:拆分数"></a>part5:拆分数</h2><p>将n个相同的小球放入k个相同的盒子(非空)的方案数称作拆分数，记作$p(n,k)$。</p>
+<p>如果不限定盒子的个数，则定义拆分数为$p(n)$。</p>
+<p>性质：</p>
+<p>$p(n)&lt;p(n+1)$</p>
+<p>$p(n)-p(n-1)&lt;p(n+1)-p(n)$</p>
+<p>$p(2n,n)=p(n)$</p>
+<h3 id="Ferrers图"><a href="#Ferrers图" class="headerlink" title="Ferrers图"></a>Ferrers图</h3><p>把n拆成若干个正整数之和，其中最大值恰为k的方案数为$p(n,k)$。</p>
+<p>可以利用这一结论dp求$p(n,k)$</p>
+<p>法1:</p>
+<script type="math/tex; mode=display">dp[n][k]\rightarrow dp[n+k][k],dp[n][k]\rightarrow dp[n][k+1]</script><p>法2:</p>
+<script type="math/tex; mode=display">dp[n][k]\rightarrow dp[n+1][k+1],dp[n][k]\rightarrow dp[n+k][k]</script><p>法3:</p>
+<p>$A=${$1,2,…,s$}</p>
+<p>$B=${$s+1,s+2,…n$}</p>
+<script type="math/tex; mode=display">p(n)=\sum_{i=0}^{n}P_a(i)\cdot P_b(n-i)</script><p>法4:</p>
+<p>生成函数：$p(x)=\prod_{k\geq 1}\frac{1}{1-x^k}$</p>
+<p>法5:</p>
+<p>$p(x)=p(n-1)+p(n-2)-p(n-5)-p(n-7)$，其中项上减去的常数为广义的五边形数。</p>
+<p>广义五边形数即为$(1-x)(1-x^2)(1-x^3)…$的系数。</p>
+<p>即：$\sum_{k=0} (-1)^kx^{3k\pm{}1}$</p>
+<h3 id="拆分数大小估计"><a href="#拆分数大小估计" class="headerlink" title="拆分数大小估计"></a>拆分数大小估计</h3><script type="math/tex; mode=display">2^{\sqrt{n}-2}\leq p(n)\leq 2^{n-1}</script><p>估计复杂度用，在十二省联考 希望 中间有所应用（暴力部分的复杂度分析）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/组合数学/" rel="tag"># 组合数学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/每月一题2019.5/" rel="next" title="每月一题2019.5">
+                <i class="fa fa-chevron-left"></i> 每月一题2019.5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/每月一题2019.6/" rel="prev" title="每月一题2019.6">
+                每月一题2019.6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="Fuyuki">
+            
+              <p class="site-author-name" itemprop="name">Fuyuki</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#part1-组合数"><span class="nav-number">1.</span> <span class="nav-text">part1:组合数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#e-g"><span class="nav-number">1.1.</span> <span class="nav-text">e.g.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part2-生成函数"><span class="nav-number">2.</span> <span class="nav-text">part2:生成函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#e-g-1"><span class="nav-number">2.1.</span> <span class="nav-text">e.g.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成函数求解递推："><span class="nav-number">2.2.</span> <span class="nav-text">生成函数求解递推：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#e-g-0"><span class="nav-number">2.2.1.</span> <span class="nav-text">e.g.0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-g-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">e.g.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-g-2"><span class="nav-number">2.2.3.</span> <span class="nav-text">e.g.2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part3-catlan数"><span class="nav-number">3.</span> <span class="nav-text">part3:catlan数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part4-Stirling数"><span class="nav-number">4.</span> <span class="nav-text">part4:Stirling数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part5-拆分数"><span class="nav-number">5.</span> <span class="nav-text">part5:拆分数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ferrers图"><span class="nav-number">5.1.</span> <span class="nav-text">Ferrers图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拆分数大小估计"><span class="nav-number">5.2.</span> <span class="nav-text">拆分数大小估计</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fuyuki</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
