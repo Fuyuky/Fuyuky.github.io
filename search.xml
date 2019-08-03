@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[伯努利数学习笔记]]></title>
+    <url>%2F%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[最没用的数学知识。 定义伯努利数$\{b_n\}$: b_n=[n==0]-\sum_{k=0}^{n-1}\binom{n}{k}\frac{b_k}{n-k+1}根据这个东西，可以推出伯努利数的指数生成函数$B(x)$: \sum_{k=0}^{n}\binom{n}{k}\frac{b_k}{n-k+1}=[n==0]\sum_{k=0}^{n}\frac{b_k}{k!}\cdot\frac{1}{(n-k+1)!}=\frac{[n==0]}{n!}B(x)\frac{e^x-1}{x}=1B(x)=\frac{x}{e^x-1}这就允许了在$O(nlogn)$的时间内求出$B(x)$。 有关伯努利数最重要的定理就是对自然数幂的转化关系式： S(n,k)=\sum_{i=0}^{n-1}i^k=\frac{1}{k+1}\sum_{i=0}^{k}\binom{k+1}{i}b_in^{k+1-i}下面是证明，定义$\{S(n,k)\}$的指数生成函数： F(n,k)=\sum_{p=0}^{\infty}\frac{S(n,p)}{p!}x^p\ \ \ \ \ \qquad=\sum_{p=0}^{\infty}\sum_{k=1}^{n}\frac{(kx)^p}{p!}\ =\sum_{k=1}^{n}e^{kx}\qquad\ \ \ =\frac{e^{(n+1)x}-e^x}{e^x-1}\ \ \ \ =\frac{1-e^{nx}}{e^{-x}-1}\qquad\qquad\ \ \ \ \ =\frac{x}{1-e^{-x}}\cdot\frac{1-e^{nx}}{x}可以看出来这个前一项就是$B(-x)$，那么原式就等于： =(\sum_{i=0}^{\infty}b_i\frac{(-x)^{i-1}}{i!})\cdot(-\sum_{i=1}^{\infty}\frac{(nx)^i}{i!})=(\sum_{i=0}^{\infty}\frac{(-1)^i}{i!}b_ix^i)(\sum_{i=1}^{\infty}\frac{n^i}{i!}x^i)\qquad=\sum_{p=0}^{\infty}(\sum_{j=0}^{p}\frac{(-1)^ib_in^{p-i+1}}{i!(p-i+1)!})x^p\qquad\ \\qquad\qquad=\sum_{p=0}^{\infty}x^p\frac{1}{(p+1)!}\sum_{i=0}^{p}(-1)^i\binom{p+1}{i}b_in^{p-i+1}那么在等式左右两边同时放上一个$[x^p]$： \frac{1}{p!}\sum_{k=1}^{n}k^p=\frac{1}{(p+1)!}\sum_{i=0}^{p}(-1)^i\binom{p+1}{i}b_in^{p-i+1}\sum_{k=1}^{n}k^p=\frac{1}{p+1}\sum_{i=0}^{p}(-1)^i\binom{p+1}{i}b_in^{p-i+1}应用： P3711 给一个数列$\{a_n\}$，求一个多项式 ANS(x)=\sum_{k=0}^{n}(S(x,k)+x^k)a^k]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>-组合数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[高斯整数学习笔记]]></title>
     <url>%2F%E9%AB%98%E6%96%AF%E6%95%B4%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[$cz$_$xuyixuan$太厉害了！！！ 经典结论证明定义$E(n)$为范数等于$n$的高斯函数个数，则有: E(n)=4\times\sum_{k|n}\chi(k)其中$\chi(x)$为模$4$意义下的狄利克雷非主特征。 证明： 引理1： 若$p$为质数，则有$(p-1)!\equiv -1\pmod p$。 证明： $p=2$时显然成立，考虑$p$为奇质数的情况。 除了单位根$1,-1$，其余的数在模意义下与其逆元在$[2,p-2]$中两两匹配，所以这些数对答案不产生贡。因此： (p-1)!\equiv 1*(p-1)\equiv-1\pmod p得证。 引理2： 如果质数$p$满足$p\equiv 1\pmod 4$，那么一定存在整数$x$，满足$p|x^2+1$。 证明： 由引理$1$可知，$(p-1)!+1\equiv 0\pmod p$ 将$\prod_{i=1}^{p-1}i$分成两半，易得： 1\times 2\equiv (p-1)\times(p-2)\pmod p3\times 4\equiv (p-3)\times(p-4)\pmod p\frac{p-3}{2}\times\frac{p-1}{2}\equiv (p-\frac{p-3}{2})\times(p-\frac{p-1}{2})\equiv \frac{p+3}{2}\times\frac{p+1}{2}\pmod p因此： \prod_{i=1}^{\lfloor p/2\rfloor}i\equiv\prod_{i=\lfloor p/2\rfloor+1}^{p-1}i\pmod p(\frac{p-1}{2}!)^2+1\equiv (p-1)!+1\equiv 0\pmod p得证。 定理1：(费马平方和定理) 奇质数$p$能分解成两个正整数$a,b$的平方和$a^2+b^2=p$当且仅当$p\equiv 1\pmod4$，且在不计$a,b$次序的情况下分解方式唯一。 费马平方和定理包含三个部分，我们分别证明一下。 $(1)$ $4k+3$型质数不能写成两个正整数的平方和。 $a^2\equiv 0,1\pmod 4$，则$a^2+b^2\equiv 0,1,2\pmod 4$。不存在模$4$等于$3$的情况，因此$(1)$得证。 这个也顺便证明了$4k+3$型的质数是高斯质数。 $(2)$ $4k+1$型质数能写成两个正整数的平方和。 由引理$2$可知，存在$x$满足$p|x^2+1$，即$p|(x+i)(x-i)$。 如果$p$是一个高斯质数，那么就会有$p|x+i$或$p|x-i$。但$\frac{x\pm i}{p}$并非高斯整数（虚部不是整数），所以假设不成立，$p$不是高斯整数。 设$p=uv(u,v\in\mathbb{Z})$，则有： p^2=N(p)=N(u)N(v)因为$p$为质数，所以必有$N(u)=N(v)=p$，而且因为$uv=p$，所以$u,v$共轭。若$u=a+bi,v=a-bi$，那么： p=uv=(a+bi)(a-bi)=a^2+b^2因此$(2)$得证。 $(3)$ 将$p$分解成两个正整数的平方和的本质不同方案唯一。 假设$p$有两种分解方式$p=a^2+b^2=c^2+d^2$，显然： (a+bi)(a-bi)=(c+di)(c-di)a+bi|(c+di)(c-di)若$a+bi$ 为高斯质数，那么$a+bi|c+di$或$a+bi|c-di$，而$N(a+bi)=N(c+di)=N(c-di)$，所以$a+bi$必定与其中一个相伴。同理，可以得到$a-bi$也与其中一个相伴，那么$p=a^2+b^2=c^2+d^2$本质相同。 若$a+bi$不是高斯质数，则设$a+bi=uv(u,v\in\mathbb{Z[i]},N(u),N(v)&gt;1)$。 p=(a+bi)(a-bi)=uv\times\overline{uv}=(u\overline{u})\times(v\overline{v})因为范数大于$1$的共轭高斯整数相乘得到大于$1$的正整数，就相当于能将$p$分解成两个大于$1$的正整数相乘，与$p$为质数矛盾。 因此$(3)$得证。 因此费马平方和定理得证。 回到一开始需要证明的东西上去，根据范数的定义，可以发现$E(n)$表示的是将$n$分解成$a^2+b^2$的方案总数，也可以看作是分解成两个共轭的高斯整数相乘$(a+bi)(a-bi)$的方案数。 这里假设只统计本质不同的分解方案$f(n)$，即去掉了所有相伴的分解方案。考虑将分解结果分别乘上单位元的贡献，有$E(n)=4f(n)$。 设$n=\prod p_i^{k_i}$，其中$p_i$为质数。 尝试将每个质数分解成共轭的质数。 对$p_i=2$，只有$2=(1-i)(1+i)$一种本质不同的分解方案，$k_i$的取值会影响方案数。 对$p_i=4k+3$，因为$4k+3$型质数为高斯质数，无法分解，所以只有$2|k_i$时有唯一的分解方案$p_i^{k_i/2}\times p_i^{k_i/2}$。 对$p_i=4k+1$，因为$p_i^{k_i}=(a+bi)^{k_i}(a-bi)^{k_i}$，所以有$(a+bi)^{p}(a-bi)^{p}\times(a+bi)^{k_i-p}(a-bi)^{k_i-p},(p\in[0,k_i])$共$k_i+1$种分解方案。 综合一下，可以得到： f(n)=\prod \begin{cases} 1&p_i=2\\\\ k_i+1& p_i=4k+1\\\\ [p_i\equiv 0 \pmod 2] & p_i=4k+3 \end{cases}那么考虑一下模$4$意义下的狄利克雷非主特征$\chi(x)$的定义： \chi(x)= \begin{cases} 1 & x\equiv 1\pmod4\\\\ -1 & x\equiv 3\pmod4\\\\ 0 & default \end{cases}对于$p_i=2$，有： \chi(p_i^{x})= \begin{cases} 1&x=0\\\\ 0&x>0 \end{cases}因此 \sum_{j=0}^{k_i}\chi(p_i^{j})=1对于$p_i=4k+1$，有： \chi(p_i^x)=1因此 \sum_{j=0}^{k_i}\chi{p_i^j}=k_i+1对于$p_i=4k+3$，有： \chi(p_i^x)= \begin{cases} 1&x\equiv 0\pmod2\\\\ -1&x\equiv 1\pmod2 \end{cases}因此 \sum_{j=0}^{k_i}\chi(p_i^j)=[k_i\equiv0\pmod2]又因为$\chi(x)$为完全积性函数，所以： \sum_{i|n}\chi(i)=\prod_{i}(\sum_{j=0}^{k_i}\chi(p_i^j))=f(n)根据最开始的定义，带入则有： E(n)=4\times\sum_{i}\chi(i)=4f(n)则该结论得证。 推论因为平面直角坐标系上的整点可以用$\mathbb{Z}[i]$表示，那么$E(n)$就可以表示距离原点距离为$\sqrt{n}$的整点个数。 如果统计一个圆心在原点处，半径为$R$的圆内有多少个整点，就相当于求$1+\sum_{i=1}^{R^2}E(i)$。 对于后半部分，用我们已知的结论展开： \sum_{i=1}^{R^2}E(i)=4\times\sum_{i=1}^{R^2}\sum_{j|i}\chi(j)交换求和顺序，原式就可以转化为： 4\times\sum_{j}^{R^2}\chi(j)\times\lfloor\frac{R^2}{j}\rfloor考虑一下当$R$趋向于无穷大的时候，向下取整以及加$1$的误差都可以忽略不计。又因为用圆内的整点数描述圆的面积在$R$趋向无穷大的时候也可以忽略不计，所以： \pi R^2=4\times R^2\sum_{j}\frac{\chi(j)}{j}这里取了等号是因为当$R$趋向无穷大的时候等式两边的误差可以达到任意小。 约去$R^2$，再代入$\chi(x)$的取值： \pi=4\times(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}{9}-\cdots)而右边的无穷级数正是收敛于$\pi$的，这也从另一个角度验证了上述推导的正确性。]]></content>
@@ -9,6 +20,17 @@
       </categories>
       <tags>
         <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[积性函数筛学习笔记]]></title>
+    <url>%2F%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0%E7%AD%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[这篇居然是洲阁筛的学习笔记？？？ 使用目标：求积性函数前缀和。 \sum_{i=1}^{n}F(i)使用前提： $1$、$F(x^k)$在$x\in{prime}$时能够快速计算。 $2$、能够构造出某若干个完全积性函数$G(p)$使得在$x\in{prime}$时$F(p)=\sum G(p)$，并且任意的$G(p)$能够快速求和，一个简单的例子就是$F(p)$为一个多项式，$G(p)$就是一个单项式。 part0根据函数的积性，可以得到： \sum_{i=1}^{n}{F(i)}=\sum_{x\leq{n},\text{x没有大于}\sqrt{n}\text{的质因子}}F(x)\Bigg(1+\sum_{\sqrt{n}]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Min_25筛</tag>
       </tags>
   </entry>
   <entry>

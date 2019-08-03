@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数学,">
+  <meta name="keywords" content="Min_25筛,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="$cz$_$xuyixuan$太厉害了！！！">
-<meta name="keywords" content="数学">
+<meta name="description" content="这篇居然是洲阁筛的学习笔记？？？">
+<meta name="keywords" content="Min_25筛">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高斯整数学习笔记">
-<meta property="og:url" content="http://yoursite.com/高斯整数学习笔记/index.html">
+<meta property="og:title" content="积性函数筛学习笔记">
+<meta property="og:url" content="http://yoursite.com/积性函数筛学习笔记/index.html">
 <meta property="og:site_name" content="Fuyuki&#39;s Blog">
-<meta property="og:description" content="$cz$_$xuyixuan$太厉害了！！！">
+<meta property="og:description" content="这篇居然是洲阁筛的学习笔记？？？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-03T12:51:53.680Z">
+<meta property="og:updated_time" content="2019-08-03T13:06:50.741Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高斯整数学习笔记">
-<meta name="twitter:description" content="$cz$_$xuyixuan$太厉害了！！！">
+<meta name="twitter:title" content="积性函数筛学习笔记">
+<meta name="twitter:description" content="这篇居然是洲阁筛的学习笔记？？？">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/高斯整数学习笔记/">
+  <link rel="canonical" href="http://yoursite.com/积性函数筛学习笔记/">
 
 
 
 
 
-  <title>高斯整数学习笔记 | Fuyuki's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>积性函数筛学习笔记 | Fuyuki's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/高斯整数学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/积性函数筛学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fuyuki">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">高斯整数学习笔记</h1>
+          <h1 class="post-title" itemprop="name headline">积性函数筛学习笔记</h1>
         
 
         <div class="post-meta">
@@ -292,7 +292,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T20:39:49+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T20:25:49+08:00">
                 2019-08-03
               </time>
             
@@ -352,87 +352,53 @@
       
 
       
-        <p>$cz$_$xuyixuan$太厉害了！！！</p>
+        <p>这篇居然是洲阁筛的学习笔记？？？</p>
 <a id="more"></a>
-<h3 id="经典结论证明"><a href="#经典结论证明" class="headerlink" title="经典结论证明"></a>经典结论证明</h3><p>定义$E(n)$为范数等于$n$的高斯函数个数，则有:</p>
-<script type="math/tex; mode=display">E(n)=4\times\sum_{k|n}\chi(k)</script><p>其中$\chi(x)$为模$4$意义下的狄利克雷非主特征。</p>
-<p><strong>证明：</strong></p>
-<p><strong>引理1：</strong> 若$p$为质数，则有$(p-1)!\equiv -1\pmod p$。</p>
-<p><strong>证明：</strong> </p>
-<p>$p=2$时显然成立，考虑$p$为奇质数的情况。</p>
-<p>除了单位根$1,-1$，其余的数在模意义下与其逆元在$[2,p-2]$中两两匹配，所以这些数对答案不产生贡。因此：</p>
-<script type="math/tex; mode=display">(p-1)!\equiv 1*(p-1)\equiv-1\pmod p</script><p>得证。</p>
-<p><strong>引理2：</strong> 如果质数$p$满足$p\equiv 1\pmod 4$，那么一定存在整数$x$，满足$p|x^2+1$。</p>
-<p><strong>证明：</strong></p>
-<p>由引理$1$可知，$(p-1)!+1\equiv 0\pmod p$</p>
-<p>将$\prod_{i=1}^{p-1}i$分成两半，易得：</p>
-<script type="math/tex; mode=display">1\times 2\equiv (p-1)\times(p-2)\pmod p</script><script type="math/tex; mode=display">3\times 4\equiv (p-3)\times(p-4)\pmod p</script><script type="math/tex; mode=display">\frac{p-3}{2}\times\frac{p-1}{2}\equiv (p-\frac{p-3}{2})\times(p-\frac{p-1}{2})\equiv \frac{p+3}{2}\times\frac{p+1}{2}\pmod p</script><p>因此：</p>
-<script type="math/tex; mode=display">\prod_{i=1}^{\lfloor p/2\rfloor}i\equiv\prod_{i=\lfloor p/2\rfloor+1}^{p-1}i\pmod p</script><script type="math/tex; mode=display">(\frac{p-1}{2}!)^2+1\equiv (p-1)!+1\equiv 0\pmod p</script><p>得证。</p>
-<p><strong>定理1：(费马平方和定理)</strong> 奇质数$p$能分解成两个正整数$a,b$的平方和$a^2+b^2=p$当且仅当$p\equiv 1\pmod4$，且在不计$a,b$次序的情况下分解方式唯一。</p>
-<p>费马平方和定理包含三个部分，我们分别证明一下。</p>
-<p>$(1)$ $4k+3$型质数不能写成两个正整数的平方和。</p>
-<p>$a^2\equiv 0,1\pmod 4$，则$a^2+b^2\equiv 0,1,2\pmod 4$。不存在模$4$等于$3$的情况，因此$(1)$得证。</p>
-<p>这个也顺便证明了$4k+3$型的质数是高斯质数。</p>
-<p>$(2)$ $4k+1$型质数能写成两个正整数的平方和。</p>
-<p>由引理$2$可知，存在$x$满足$p|x^2+1$，即$p|(x+i)(x-i)$。</p>
-<p>如果$p$是一个高斯质数，那么就会有$p|x+i$或$p|x-i$。但$\frac{x\pm i}{p}$并非高斯整数（虚部不是整数），所以假设不成立，$p$不是高斯整数。</p>
-<p>设$p=uv(u,v\in\mathbb{Z})$，则有：</p>
-<script type="math/tex; mode=display">p^2=N(p)=N(u)N(v)</script><p>因为$p$为质数，所以必有$N(u)=N(v)=p$，而且因为$uv=p$，所以$u,v$共轭。若$u=a+bi,v=a-bi$，那么：</p>
-<script type="math/tex; mode=display">p=uv=(a+bi)(a-bi)=a^2+b^2</script><p>因此$(2)$得证。</p>
-<p>$(3)$ 将$p$分解成两个正整数的平方和的本质不同方案唯一。</p>
-<p>假设$p$有两种分解方式$p=a^2+b^2=c^2+d^2$，显然：</p>
-<script type="math/tex; mode=display">(a+bi)(a-bi)=(c+di)(c-di)</script><script type="math/tex; mode=display">a+bi|(c+di)(c-di)</script><p>若$a+bi$ 为高斯质数，那么$a+bi|c+di$或$a+bi|c-di$，而$N(a+bi)=N(c+di)=N(c-di)$，所以$a+bi$必定与其中一个相伴。同理，可以得到$a-bi$也与其中一个相伴，那么$p=a^2+b^2=c^2+d^2$本质相同。</p>
-<p>若$a+bi$不是高斯质数，则设$a+bi=uv(u,v\in\mathbb{Z[i]},N(u),N(v)&gt;1)$。</p>
-<script type="math/tex; mode=display">p=(a+bi)(a-bi)=uv\times\overline{uv}=(u\overline{u})\times(v\overline{v})</script><p>因为范数大于$1$的共轭高斯整数相乘得到大于$1$的正整数，就相当于能将$p$分解成两个大于$1$的正整数相乘，与$p$为质数矛盾。</p>
-<p>因此$(3)$得证。</p>
-<p>因此费马平方和定理得证。</p>
-<p>回到一开始需要证明的东西上去，根据范数的定义，可以发现$E(n)$表示的是将$n$分解成$a^2+b^2$的方案总数，也可以看作是分解成两个共轭的高斯整数相乘$(a+bi)(a-bi)$的方案数。</p>
-<p>这里假设只统计本质不同的分解方案$f(n)$，即去掉了所有相伴的分解方案。考虑将分解结果分别乘上单位元的贡献，有$E(n)=4f(n)$。</p>
-<p>设$n=\prod p_i^{k_i}$，其中$p_i$为质数。</p>
-<p>尝试将每个质数分解成共轭的质数。</p>
-<p>对$p_i=2$，只有$2=(1-i)(1+i)$一种本质不同的分解方案，$k_i$的取值会影响方案数。</p>
-<p>对$p_i=4k+3$，因为$4k+3$型质数为高斯质数，无法分解，所以只有$2|k_i$时有唯一的分解方案$p_i^{k_i/2}\times  p_i^{k_i/2}$。</p>
-<p>对$p_i=4k+1$，因为$p_i^{k_i}=(a+bi)^{k_i}(a-bi)^{k_i}$，所以有$(a+bi)^{p}(a-bi)^{p}\times(a+bi)^{k_i-p}(a-bi)^{k_i-p},(p\in[0,k_i])$共$k_i+1$种分解方案。</p>
-<p>综合一下，可以得到：</p>
-<script type="math/tex; mode=display">
-f(n)=\prod
-\begin{cases}
-1&p_i=2\\\\
-k_i+1& p_i=4k+1\\\\
-[p_i\equiv 0 \pmod 2] & p_i=4k+3
-\end{cases}</script><p>那么考虑一下模$4$意义下的狄利克雷非主特征$\chi(x)$的定义：</p>
-<script type="math/tex; mode=display">
-\chi(x)=
-\begin{cases}
-1 & x\equiv 1\pmod4\\\\
--1 & x\equiv 3\pmod4\\\\
-0 & default
-\end{cases}</script><p>对于$p_i=2$，有：</p>
-<script type="math/tex; mode=display">
-\chi(p_i^{x})=
-\begin{cases}
-1&x=0\\\\
-0&x>0
-\end{cases}</script><p>因此</p>
-<script type="math/tex; mode=display">\sum_{j=0}^{k_i}\chi(p_i^{j})=1</script><p>对于$p_i=4k+1$，有：</p>
-<script type="math/tex; mode=display">\chi(p_i^x)=1</script><p>因此</p>
-<script type="math/tex; mode=display">\sum_{j=0}^{k_i}\chi{p_i^j}=k_i+1</script><p>对于$p_i=4k+3$，有：</p>
-<script type="math/tex; mode=display">\chi(p_i^x)=
-\begin{cases}
-1&x\equiv 0\pmod2\\\\
--1&x\equiv 1\pmod2
-\end{cases}</script><p>因此</p>
-<script type="math/tex; mode=display">\sum_{j=0}^{k_i}\chi(p_i^j)=[k_i\equiv0\pmod2]</script><p>又因为$\chi(x)$为完全积性函数，所以：</p>
-<script type="math/tex; mode=display">\sum_{i|n}\chi(i)=\prod_{i}(\sum_{j=0}^{k_i}\chi(p_i^j))=f(n)</script><p>根据最开始的定义，带入则有：</p>
-<script type="math/tex; mode=display">E(n)=4\times\sum_{i}\chi(i)=4f(n)</script><p>则该结论得证。</p>
-<h3 id="推论"><a href="#推论" class="headerlink" title="推论"></a>推论</h3><p>因为平面直角坐标系上的整点可以用$\mathbb{Z}[i]$表示，那么$E(n)$就可以表示距离原点距离为$\sqrt{n}$的整点个数。</p>
-<p>如果统计一个圆心在原点处，半径为$R$的圆内有多少个整点，就相当于求$1+\sum_{i=1}^{R^2}E(i)$。</p>
-<p>对于后半部分，用我们已知的结论展开：</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{R^2}E(i)=4\times\sum_{i=1}^{R^2}\sum_{j|i}\chi(j)</script><p>交换求和顺序，原式就可以转化为：</p>
-<script type="math/tex; mode=display">4\times\sum_{j}^{R^2}\chi(j)\times\lfloor\frac{R^2}{j}\rfloor</script><p>考虑一下当$R$趋向于无穷大的时候，向下取整以及加$1$的误差都可以忽略不计。又因为用圆内的整点数描述圆的面积在$R$趋向无穷大的时候也可以忽略不计，所以：</p>
-<script type="math/tex; mode=display">\pi R^2=4\times R^2\sum_{j}\frac{\chi(j)}{j}</script><p>这里取了等号是因为当$R$趋向无穷大的时候等式两边的误差可以达到任意小。</p>
-<p>约去$R^2$，再代入$\chi(x)$的取值：</p>
-<script type="math/tex; mode=display">\pi=4\times(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}{9}-\cdots)</script><p>而右边的无穷级数正是收敛于$\pi$的，这也从另一个角度验证了上述推导的正确性。</p>
+<p>使用目标：求积性函数前缀和。</p>
+<script type="math/tex; mode=display">\sum_{i=1}^{n}F(i)</script><p>使用前提：</p>
+<p>$1$、$F(x^k)$在$x\in{prime}$时能够快速计算。</p>
+<p>$2$、能够构造出某若干个完全积性函数$G(p)$使得在$x\in{prime}$时$F(p)=\sum G(p)$，并且任意的$G(p)$能够快速求和，一个简单的例子就是$F(p)$为一个多项式，$G(p)$就是一个单项式。</p>
+<h2 id="part0"><a href="#part0" class="headerlink" title="part0"></a>part0</h2><p>根据函数的积性，可以得到：</p>
+<script type="math/tex; mode=display">\sum_{i=1}^{n}{F(i)}=\sum_{x\leq{n},\text{x没有大于}\sqrt{n}\text{的质因子}}F(x)\Bigg(1+\sum_{\sqrt{n}<p\leq\lfloor\frac{n}{x}\rfloor,p\text{是质数}}G(p)\Bigg)</script><p>这里很容易想到根据$\lfloor\frac{n}{x}\rfloor$的取值分成$\sqrt{n}$段，设$y$为枚举的$\lfloor\frac{n}{x}\rfloor$的值，那么要分别计算下面两个部分：</p>
+<script type="math/tex; mode=display">\sum_{\sqrt{n}<p\leq{y},p\text{是质数}}G(p),\sum_{\lfloor\frac{n}{x}\rfloor=y,x\text{没有大于}\sqrt{n}\text{的质因子}}F(x)</script><h2 id="part1-计算-G-p"><a href="#part1-计算-G-p" class="headerlink" title="part1 计算$G(p)$"></a>part1 计算$G(p)$</h2><p>设不超过$\sqrt{n}$的质数一共有$m$个，升序排列为$p_1…p_m$。</p>
+<p>根据埃氏筛的逻辑，只需要将小于等于$\sqrt{n}$的质数及其倍数全部筛掉那么剩下来的就是大于等于$\sqrt{n}$的所有质数。</p>
+<p>在这里，构造出来的$G(p)$是某个完全积性函数，因此也可以采用类似的方式逐个筛掉小于等于$\sqrt{n}$质数的贡献。</p>
+<p>设$g[i][j]$为$[1,j]$范围内与前$i$个质数互质的所有的数的$G(p)$之和，$g[0][j]$的答案需要预先求出，这也就是为什么最上面要求了$G(p)$能够快速求和。</p>
+<p>然后枚举$i$，考虑$[1,j]$内有多少含有$p_i$质因子的数与前$i-1$个数互质，设$l=\lfloor\frac{j}{p_i}\rfloor$，有如下递推式：</p>
+<script type="math/tex; mode=display">g[i][j]=g[i-1][j]-G(p_i)g[i-1][l]</script><p>考虑一下这么做的意义，$[1,j]$内还能与$p_i$不互质的数字一定都在$[1,l]$之间这一堆的数再乘上$G(p_i)$就是$p_i$的所有倍数，即所有与$p_i$不互质的部分的贡献了，减去即可。</p>
+<p>这样递推得到的$g[m][j]-G(1)$就是$[1,j]$内所有大于$\sqrt{n}$的质数的$G(p)$之和。</p>
+<p>观察到，计算$g[m][n]$的过程中需要的第二维状态就是所有的$\lfloor\frac{n}{x}\rfloor$的取值，也只有$O(\sqrt{n})$种。</p>
+<p>朴素实现的话，需要一次枚举质数$p_i$，并且对每一个状态进行计算。</p>
+<p>考虑每个$\lfloor\frac{n}{x}\rfloor$有多少质数需要转移，其中$\lfloor\frac{n}{x}\rfloor&gt;\sqrt{n}$的部分需要转移$\sqrt{n}$范围内所有质数。</p>
+<script type="math/tex; mode=display">\sum_{i=1}^{\lfloor\sqrt{n}\rfloor}O(\frac{i}{logi})+\sum_{i=1}^{\lfloor\sqrt{n}\rfloor}O(\frac{\sqrt{n}}{log{\sqrt{n}}})=O(\frac{n}{logn})</script><p>这个复杂度过高，考虑进行优化：</p>
+<p>当$p_{i+1}&gt;j$时，一定有$g[i][j]=G(1)$，因为这时所有可能的数字均已被筛去。</p>
+<p>那么，当$p_i^2&gt;j\geq p_i$时，即$l=\lfloor\frac{j}{p_i}\rfloor&lt;p_i$时：</p>
+<script type="math/tex; mode=display">g[i-1][j]=G(1)</script><script type="math/tex; mode=display">g[i][j]=g[i-1][j]-G(p_i)</script><p>因此可以省去$p_i^2&gt;j$时的计算部分，因为在$p_i^2&gt;j$之后所有质数的贡献都相同可以一起计算。那么可以考虑对于每个$j$都记录一下最后一次转移的$i$的值，在调用$g[i][j]$的位置的时候就可以直接将这一部分的质数的贡献计入。</p>
+<p>以下，$last[j]$表示$j$最后一次转移时的$i$的值。</p>
+<script type="math/tex; mode=display">g[i][j]=g[i-1][j]-G(p_i)g[i-1][l]</script><script type="math/tex; mode=display">\qquad\qquad\quad\qquad=g[i-1][j]-G(p_i)(g[last[l]][l]-\sum_{k=last[l]+1}^{i-1}G(p_k))</script><p>令$S_k=\sum_{i=1}^{k}G(p_i)$，这个东西是可以预处理出来的。</p>
+<script type="math/tex; mode=display">g[i][j]=g[i-1][j]-G(p_i)(g[last[l]][l]-S_{i-1}+S_{last[l]})</script><p>这个形式是相当方便的，因为在转移完全的时候，$last[l]=i-1$，那么就相当于这个优化不生效，而原来的递推关系式依旧是成立的，每次对于$i$只需要枚举$\geq p_i^2$的$j$并且更新对应的$last[j]$就可以了。</p>
+<p>这样对于每一组$\lfloor\frac{n}{x}\rfloor$只需要转移不超过$\sqrt{\lfloor\frac{n}{x}\rfloor}$的质数，那么复杂度就可以记作：</p>
+<script type="math/tex; mode=display">\sum_{i=1}^{\lfloor\sqrt{n}\rfloor}O\Big(\frac{\sqrt{i}}{log\ i}\Big)+\sum_{i=1}^{\lfloor\sqrt{n}\rfloor}\Big(\frac{\sqrt{\frac{n}{i}}}{log\sqrt{\frac{n}{i}}}\Big)=O\Big(\frac{n^{\frac{3}{4}}}{log\ n}\Big)</script><p>至于怎么算的…….去问隔壁数学组吧。</p>
+<h2 id="part2-计算-F-x"><a href="#part2-计算-F-x" class="headerlink" title="part2 计算$F(x)$"></a>part2 计算$F(x)$</h2><p>将不超过$\sqrt{n}$的质数降序排列为$p_1….p_m$。</p>
+<p>设 $f[i][j]$表示只包含前$i$种质因子，且$x\leq j$的$F(x)$之和，易知$f[0][j]=1$。下设$l_c=\lfloor\frac{j}{p_i^c}\rfloor$</p>
+<script type="math/tex; mode=display">f[i][j]=f[i-1][j]+\sum_{c=1}F(p_i^c)f[i-1][l_c]</script><p>这是一个比较显然的转移方程，最后枚举了$p_i$的指数，再利用函数的积性将前$p_i$个质数组成的答案拿过来进行合并。</p>
+<p>第一维的状态数为$O(\frac{\sqrt{n}}{log\ n})$(质数数量)，第二维的状态数为$O(\sqrt{n})$，那么直接计算的复杂度就至少不会低于$O(\frac{n}{log\ n})$</p>
+<p>在前一部分通过发现$p_i^2&gt;j$时的转移有规律而将复杂度大幅度减少，这启发我们再用类似的方法优化。</p>
+<p>当$p_i^2&gt;j$时，设$l=\lfloor\frac{j}{p_i}\rfloor$:</p>
+<script type="math/tex; mode=display">f[i][j]=f[i-1][j-1]+F(p_i)f[i-1][l]</script><p>注意到因为$p_i&gt;l=\lfloor\frac{j}{p_i}\rfloor$，而$p_i$又是降序枚举的，所以根据定义一定有$f[i-1][l]=1$。</p>
+<p>那么依旧可以省去$p_i^2&gt;j$这部分的计算，记$last[j]$表示$j$位置最后一次转移时的$i$的值，那么：</p>
+<script type="math/tex; mode=display">f[i][j]=f[i-1][j]+\sum_{c=1}F(p_i^c)(f[last[l_c]][l_c]+\sum_{k=last[l_c]+1}^{i-1}F(p_k))</script><p>同理，线性筛预处理出$S_k=\sum_{i=1}^kF(p_k)$</p>
+<script type="math/tex; mode=display">f[i][j]=f[i-1][j]+\sum_{c=1}F(p_i^c)(f[last[l_c]][l_c]+S_{i-1}-S_{last[l_c]})</script><p>那么对于每一个第二维状态$\lfloor\frac{n}{x}\rfloor$，都只有大于$\sqrt{\lfloor\frac{n}{x}\rfloor}$的质数需要转移，这样子就和$part1$的复杂度几乎一致了，经过证明也是$O(\frac{n^{\frac{3}{4}}}{log\ n})$。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>可以发现，州阁筛的核心思想如下：</p>
+<p>$1$、将数分成最大质因子不大于$\sqrt{n}$与大于$\sqrt{n}$的质数两部分，再利用函数的积性合并答案。</p>
+<p>$2$、对于大于$\sqrt{n}$的部分，构造某个完全积性函数$G(p)$，枚举小于$\sqrt{n}$的质数，将合数的贡献从能够快速求出的$G(p)$之和中逐步筛去。</p>
+<p>$3$、对于最大质因子小于$\sqrt{n}$的部分，枚举质数并再利用函数的积性将答案重新合并。</p>
+<p>$4$、通过某些方式（改变枚举质数的顺序等），将$p_i^2&gt;j$的相同系数转移部分省掉，并且通过预处理相同系数转移的前缀和数组节省复杂度。</p>
+<p>$5$、如果有心的话，就会发现，州阁筛本质上就是按照某种方式将$[1,n]$的所有数都按某种顺序进行了质因数分解，因此可以完成大部分筛法的功能（因为几乎所有数论函数都可以通过质因数分解求出单点的取值）.</p>
+<h2 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h2><p>$1$、数组不能直接开，要使用滚动数组，而不转移的部分不进行滚动。</p>
+<p>$2$、因为二维数组的第二维状态量很小但是数值很大，应该使用$hash$表来储存。这里推荐使用手写$hash$表。因为大于$\sqrt{n}$的状态都可以与一个小于$\sqrt{n}$的数一一对应，那么直接一除就可以得到$hash$表中对应的下标。</p>
+<h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><p>计算$f[][]$的时候如果不使用滚动数组+$Hash$递推，而是采用倒过来搜索的方式（不记忆化）就是$Min_25$筛了？</p>
+<p>这就是$Min_25$筛好写、复杂度玄学、常数小的原因？？？</p>
 
       
     </div>
@@ -450,7 +416,7 @@ k_i+1& p_i=4k+1\\\\
       
         <div class="post-tags">
           
-            <a href="/tags/数学/" rel="tag"># 数学</a>
+            <a href="/tags/Min-25筛/" rel="tag"># Min_25筛</a>
           
         </div>
       
@@ -463,8 +429,8 @@ k_i+1& p_i=4k+1\\\\
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/积性函数筛学习笔记/" rel="next" title="积性函数筛学习笔记">
-                <i class="fa fa-chevron-left"></i> 积性函数筛学习笔记
+              <a href="/斯特林数学习笔记/" rel="next" title="斯特林数学习笔记">
+                <i class="fa fa-chevron-left"></i> 斯特林数学习笔记
               </a>
             
           </div>
@@ -473,8 +439,8 @@ k_i+1& p_i=4k+1\\\\
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/伯努利数学习笔记/" rel="prev" title="伯努利数学习笔记">
-                伯努利数学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/高斯整数学习笔记/" rel="prev" title="高斯整数学习笔记">
+                高斯整数学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -609,7 +575,7 @@ k_i+1& p_i=4k+1\\\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#经典结论证明"><span class="nav-number">1.</span> <span class="nav-text">经典结论证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推论"><span class="nav-number">2.</span> <span class="nav-text">推论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#part0"><span class="nav-number">1.</span> <span class="nav-text">part0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part1-计算-G-p"><span class="nav-number">2.</span> <span class="nav-text">part1 计算$G(p)$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part2-计算-F-x"><span class="nav-number">3.</span> <span class="nav-text">part2 计算$F(x)$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现细节"><span class="nav-number">5.</span> <span class="nav-text">实现细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update"><span class="nav-number">6.</span> <span class="nav-text">Update</span></a></li></ol></div>
             
 
           </div>
